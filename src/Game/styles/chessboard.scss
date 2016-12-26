@@ -1,0 +1,9 @@
+@import './util';
+
+/*
+ * 棋盘样式
+ */
+.chessboard {
+	position: relative;
+	background-color: $bg-color;
+}

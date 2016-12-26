@@ -1,0 +1,100 @@
+export default [{
+	x: 0,
+	y: 0,
+	width: 4,
+	height: 4,
+	type: 'base',
+	team: 0,
+	color: 'green',
+	shape: 'rect'
+}, {
+	x: 13,
+	y: 0,
+	width: 4,
+	height: 4,
+	type: 'base',
+	team: 1,
+	color: 'pink',
+	shape: 'rect'
+}, {
+	x: 0,
+	y: 13,
+	width: 4,
+	height: 4,
+	type: 'base',
+	team: 2,
+	color: 'orange',
+	shape: 'rect'
+}, {
+	x: 13,
+	y: 13,
+	width: 4,
+	height: 4,
+	type: 'base',
+	team: 3,
+	color: 'blue',
+	shape: 'rect'
+}, {
+	x: 4,
+	y: 0,
+	width: 2,
+	height: 2,
+	type: 'normal',
+	team: 3,
+	color: '',
+	shape: 'triangle-bottom-right-blue'
+}, {
+	x: 6,
+	y: 0,
+	width: 1,
+	height: 2,
+	type: 'normal',
+	team: 2,
+	color: 'orange',
+	shape: 'vertical_rect'
+}, {
+	x: 7,
+	y: 0,
+	width: 1,
+	height: 2,
+	type: 'normal',
+	team: 0,
+	color: 'green',
+	shape: 'vertical_rect'
+}, {
+	x: 8,
+	y: 0,
+	width: 1,
+	height: 2,
+	type: 'normal',
+	team: 0,
+	color: 'pink',
+	shape: 'vertical_rect'
+}, {
+	x: 9,
+	y: 0,
+	width: 1,
+	height: 2,
+	type: 'normal',
+	team: 0,
+	color: 'blue',
+	shape: 'vertical_rect'
+}, {
+	x: 10,
+	y: 0,
+	width: 1,
+	height: 2,
+	type: 'normal',
+	team: 0,
+	color: 'orange',
+	shape: 'vertical_rect'
+}, {
+	x: 11,
+	y: 0,
+	width: 2,
+	height: 2,
+	type: 'normal',
+	team: 3,
+	color: '',
+	shape: 'triangle-bottom-left-green'
+}]
