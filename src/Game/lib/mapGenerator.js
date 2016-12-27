@@ -33,7 +33,6 @@ export default class MapCenerator {
 		`
 		this.chessboard.elem.appendChild(this.elem)
 	}
-
 	createPath() {
 		let conf = colors.map((c, I) => {
 			return pathMode.map((item, i) => {
@@ -68,6 +67,9 @@ export default class MapCenerator {
 	renderMap() {
 		let pathData = this.createPath()
 
+
+		// 有动画的
+		
 		const timeout = (ms, option) => {
 			return new Promise((resolve) => {
 				setTimeout(() => {
@@ -83,7 +85,6 @@ export default class MapCenerator {
 			}
 			res()
 		}
-
 		const newSub = async (item) =>  {
 			await new Promise((res) => {
 				newBlock(item, res)
@@ -120,10 +121,9 @@ export default class MapCenerator {
 				await newSub(item)
 			}
 		}
-
 		createSub()
 
-		// dev
+		// 没动画的
 
 		// pathData.map((item, index) => {
 		// 	let conf = {

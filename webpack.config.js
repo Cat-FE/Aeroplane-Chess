@@ -10,7 +10,7 @@ var config = {
   devtool: 'inline-source-map',
   context: SRC_PATH,
   entry: {
-    main: ['babel-polyfill', './main.js'],
+    main: './main.js',
     html: './index.html'
   },
   output: {
