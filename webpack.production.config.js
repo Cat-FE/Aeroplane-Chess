@@ -7,7 +7,7 @@ var config = {
   devtool: false,
   context: SRC_PATH,
   entry: {
-    main: './main.js',
+    main: ['babel-polyfill', './main.js'],
     html: './index.html'
   },
   output: {
