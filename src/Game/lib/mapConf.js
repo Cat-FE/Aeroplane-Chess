@@ -6,7 +6,8 @@ export default {
   //矩形状态
   rect: ['cross', 'vertical'],
   //三角形状态
-  triangle: ['bottom-right', 'bottom-left', 'top-left', 'top-right'],
+  triangle: ['bottom-right', 'bottom-left', 'top-left', 'top-right',
+              'top', 'bottom', 'left', 'right'],
   //地图布置模式
   //
   //  使用数组做简化配置书写
@@ -36,7 +37,8 @@ export default {
     [1, 3, 4, -4],
     [0, 0, 4, -5], [0, 0, 4, -6],
     [1, 0, 4, -8],
-    [0, 1, 6, -8], [0, 1, 7, -8]
+    [0, 1, 6, -8], [0, 1, 7, -8],
+    [0, -1, 2, 0], [0, -1, 3, 0], [0, -1, 4, 0], [0, -1, 5, 0], [0, -1, 6, 0], [0, -1, 7, 0]
   ],
 
 }

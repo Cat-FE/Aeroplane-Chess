@@ -35,7 +35,7 @@ export default class MapCenerator {
 	}
   //分析路径配置，创建相应的block配置
   createPath() {
-    let conf = colors.map((c, I) => {
+    let conf = colors.map((color, I) => {
       return pathMode.map((item, i) => {
         let blockConf = {
             x: 0 + item[2],
@@ -43,21 +43,24 @@ export default class MapCenerator {
             width: 1,
             height: 1,
             color: colors[(i + I) % 4],
-            shape: ''
+            shape: 'rect'
         }
-        if (item[0]) {
+        if (item[0]) {//判断是否为三角形
           blockConf.shape = 'triangle-' + triangle[item[1]] + '-' + blockConf.color
           blockConf.width = 2
           blockConf.height = 2
           blockConf.color = ''
-        } else {
-          blockConf.shape = rect[item[1]] + '_rect'
-          if (item[1]) {
-            blockConf.width = 1
-            blockConf.height = 2
+        } else {//矩形
+          if (item[1] === -1) {
+            blockConf.color = color
           } else {
+            blockConf.shape = rect[item[1]] + '_rect'
+          }
+          if (item[1] === 1) {
+            blockConf.height = 2
+          }
+          if (item[1] === 0) {
             blockConf.width = 2
-            blockConf.height = 1
           }
         }
         return blockConf
@@ -97,22 +100,6 @@ export default class MapCenerator {
       item.map((option) => {
         new Block(option, that)
       })
-      //暂停
-  		// function *block() {
-  		// 	for (let i = 0, l = item.length; i < l; i++) {
-  		// 		new Block(item[i], that)
-  		// 		yield 0
-  		// 	}
-  		// }
-  		// function next() {
-  		// 	if (!b.next().done) {
-  		// 		setTimeout(function() {
-  		// 			next()
-  		// 		}, 200)
-  		// 	}
-  		// }
-  		// let b = block()
-  		// next()
 		})
   }
 }
