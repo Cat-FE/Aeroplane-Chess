@@ -15,16 +15,16 @@ let _Block_default = {
 }
 
 export default class Block {
-	constructor(option, chessboard) {
+	constructor(option, wrapper) {
 		Object.assign(this, _Block_default, option)
-		this.chessboard = chessboard
+		this.wrapper = wrapper
 		this.createBlock()
 	}
 	//  生成地图块
 	createBlock() {
 		this.elem = document.createElement('DIV')
 		this.elem.className = `block ${this.type} ${this.shape} ${this.color}`
-		let unit = this.chessboard.unit
+		let unit = this.wrapper.unit
 		this.elem.style.cssText = `
 			left: ${this.x * unit}px;
 			top: ${this.y * unit}px;
@@ -32,6 +32,6 @@ export default class Block {
 			height: ${this.height * unit}px;
 			border-width: ${this.width * unit}px;
 		`
-		this.chessboard.elem.appendChild(this.elem)
+		this.wrapper.elem.appendChild(this.elem)
 	}
 }
