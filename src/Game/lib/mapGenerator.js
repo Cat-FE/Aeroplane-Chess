@@ -33,7 +33,7 @@ export default class MapCenerator {
 		`
 		this.chessboard.elem.appendChild(this.elem)
 	}
-
+  //分析路径配置，创建相应的block配置
   createPath() {
     let conf = colors.map((c, I) => {
       return pathMode.map((item, i) => {
@@ -65,6 +65,8 @@ export default class MapCenerator {
     })
     return conf
   }
+  //将相应的blockConf配置好，填入生成的四个子单元，
+  //将四个子单元分别旋转，移动到相应位置
   renderMap() {
     let pathData = this.createPath(),
         that = this
@@ -95,7 +97,7 @@ export default class MapCenerator {
       item.map((option) => {
         new Block(option, that)
       })
-
+      //暂停
   		// function *block() {
   		// 	for (let i = 0, l = item.length; i < l; i++) {
   		// 		new Block(item[i], that)
