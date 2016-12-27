@@ -4,7 +4,7 @@ var autoprefixer = require('autoprefixer')
 var SRC_PATH = path.resolve(__dirname, 'src')
 
 var port = 12333
-opn(`http://localhost:${port}/`)
+// opn(`http://localhost:${port}/`)
 
 var config = {
   devtool: 'inline-source-map',
