@@ -4,6 +4,7 @@
 import '../styles/chessboard.scss'
 import map_data from './map.js'
 import Block from './block'
+import mapGenerator from './mapGenerator'
 
 let _Chessboard_default = {
 	size: 340,
@@ -24,8 +25,10 @@ export default class Chessboard {
 		this.elem.style.cssText = `width: ${this.size}px; height: ${this.size}px;`
 		this.wrap.appendChild(this.elem)
 	}
+
 	//  初始化棋盘
 	initChessboard() {
-		Array.from(map_data, option => new Block(option, this))
+		new mapGenerator(this)
+		// Array.from(data[0], option => new Block(option, this))
 	}
 }
