@@ -2,8 +2,8 @@
  * 棋盘
  */
 import '../styles/chessboard.scss'
-import map_data from './map.js'
-import Block from './block'
+// import map_data from './map.js'
+// import Block from './block'
 import mapGenerator from './mapGenerator'
 
 let _Chessboard_default = {

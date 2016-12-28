@@ -22,8 +22,8 @@ var config = {
       test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'
     }, {
-      test: /\.js$/,
-      loader: 'babel'
+	  test: /\.js$/,
+      loaders: ['babel-loader', 'eslint-loader']
     },{
       test: /\.(scss|css)$/,
       loaders: ['style', 'css', 'postcss', 'sass'],
@@ -47,6 +47,9 @@ var config = {
         'process.env': { NODE_ENV: JSON.stringify('production') }
     })
   ],
+  eslint: {
+	configFile: './.eslintrc'
+  },
   postcss:[
     autoprefixer({
       browsers: ['>0%']

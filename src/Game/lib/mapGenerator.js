@@ -6,7 +6,6 @@ import mapConf from './mapConf.js'
 
 let {
 	colors,
-	shape,
 	rect,
 	triangle,
 	pathMode
@@ -36,6 +35,7 @@ export default class MapCenerator {
 	//分析路径配置，创建相应的block配置
 	createPath() {
 		let conf = colors.map((color, I) => {
+
 			return pathMode.map((item, i) => {
 				let blockConf = {
 					x: 0 + item[2],
@@ -46,21 +46,34 @@ export default class MapCenerator {
 					shape: 'rect'
 				}
 				if (item[0]) { //判断是否为三角形
-					blockConf.shape = 'triangle-' + triangle[item[1]] + '-' + blockConf.color
-					blockConf.width = 2
-					blockConf.height = 2
+					let tri_color = blockConf.color
+					if (item[1] < 4) {
+						blockConf.width = 2
+						blockConf.height = 2
+					} else {
+						blockConf.width = 1.5
+						blockConf.height = 1.5
+						tri_color = color
+					}
+					blockConf.shape = 'triangle-' + triangle[item[1]] + '-' + tri_color
 					blockConf.color = ''
 				} else { //矩形
-					if (item[1] === -1) {
+					switch (item[1]) {
+					case -2:
+						blockConf.height = 4
+						blockConf.width = 4
+						break
+					case -1:
 						blockConf.color = color
-					} else {
-						blockConf.shape = rect[item[1]] + '_rect'
-					}
-					if (item[1] === 1) {
-						blockConf.height = 2
-					}
-					if (item[1] === 0) {
+						break
+					case 0:
 						blockConf.width = 2
+						blockConf.shape = rect[item[1]] + '_rect'
+						break
+					case 1:
+						blockConf.height = 2
+						blockConf.shape = rect[item[1]] + '_rect'
+						break
 					}
 				}
 				return blockConf
@@ -107,18 +120,18 @@ export default class MapCenerator {
 				}
 				conf.deg = index * 90
 				switch (index) {
-					case 0:
-						conf.translate = [0, 0]
-						break
-					case 1:
-						conf.translate = [8.5, -0.5]
-						break
-					case 2:
-						conf.translate = [9, 8]
-						break
-					case 3:
-						conf.translate = [0.5, 8.5]
-						break
+				case 0:
+					conf.translate = [0, 0]
+					break
+				case 1:
+					conf.translate = [8.5, -0.5]
+					break
+				case 2:
+					conf.translate = [9, 8]
+					break
+				case 3:
+					conf.translate = [0.5, 8.5]
+					break
 				}
 				this.createSubWrapper(conf)
 				// animate

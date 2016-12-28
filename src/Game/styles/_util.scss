@@ -69,6 +69,7 @@ $colors: (roseate $roseate),
 (gray $gray),
 (light-gray $light-gray);
 
+$locations: left right top bottom;
 $multilocations: (left top), (left bottom), (right top), (right bottom), (top left), (top right), (bottom left), (bottom right);
 
 //**************************************************************
