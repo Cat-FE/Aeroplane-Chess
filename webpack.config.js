@@ -1,14 +1,16 @@
-var path = require('path');
-var autoprefixer = require('autoprefixer');
-var SRC_PATH = path.resolve(__dirname, 'src');
+var path = require('path')
+var opn = require('opn')
+var autoprefixer = require('autoprefixer')
+var SRC_PATH = path.resolve(__dirname, 'src')
 
 var port = 12333
+// opn(`http://localhost:${port}/`)
 
 var config = {
   devtool: 'inline-source-map',
   context: SRC_PATH,
   entry: {
-    main: './main.js',
+    main: ['babel-polyfill', './main.js'],
     html: './index.html'
   },
   output: {
@@ -54,6 +56,6 @@ var config = {
       browsers: ['>0%']
     })
   ]
-};
+}
 
-module.exports = config;
+module.exports = config

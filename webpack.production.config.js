@@ -1,14 +1,13 @@
-var webpack = require('webpack');
-var path = require('path');
-var autoprefixer = require('autoprefixer');
-var SRC_PATH = path.resolve(__dirname, 'src');
-var node_modules_dir = path.resolve(__dirname, 'node_modules');
+var webpack = require('webpack')
+var path = require('path')
+var autoprefixer = require('autoprefixer')
+var SRC_PATH = path.resolve(__dirname, 'src')
 
 var config = {
   devtool: false,
   context: SRC_PATH,
   entry: {
-    main: './main.js',
+    main: ['babel-polyfill', './main.js'],
     html: './index.html'
   },
   output: {
@@ -53,6 +52,6 @@ var config = {
       browsers: ['>0%']
     })
   ]
-};
+}
 
-module.exports = config;
+module.exports = config
