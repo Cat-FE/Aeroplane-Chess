@@ -30,7 +30,7 @@ var config = {
       loader: 'url-loader'
     },{
       test: /\.js$/,
-      loader: 'babel'
+      loaders: ['babel-loader', 'eslint-loader']
     },{
       test: /\.(scss|css)$/,
       loaders: ['style', 'css?sourceMap', 'postcss', 'sass'],
@@ -50,6 +50,9 @@ var config = {
     inline: true,
     progress: true,
     port: port
+  },
+  eslint: {
+	configFile: './.eslintrc'
   },
   postcss:[
     autoprefixer({
