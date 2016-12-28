@@ -25,6 +25,15 @@
 	            @include triangle(0, $color, #{$f}-#{$s})
 	        }
 	    }
+
+			@each $dir in $locations {
+	        &.triangle-#{$dir}-#{$name} {
+	            content: '';
+	            width: 100%;
+	            height: 100%;
+	            @include triangle(0, $color, #{$dir})
+	        }
+	    }
 	}
 
 }
