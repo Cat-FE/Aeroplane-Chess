@@ -6,7 +6,6 @@ import mapConf from './mapConf.js'
 
 let {
 	colors,
-	shape,
 	rect,
 	triangle,
 	pathMode
@@ -60,20 +59,20 @@ export default class MapCenerator {
 					blockConf.color = ''
 				} else { //矩形
 					switch (item[1]) {
-						case -2:
-							blockConf.height = 4
-							blockConf.width = 4
+					case -2:
+						blockConf.height = 4
+						blockConf.width = 4
 						break
-						case -1:
-							blockConf.color = color
+					case -1:
+						blockConf.color = color
 						break
-						case 0:
-							blockConf.width = 2
-							blockConf.shape = rect[item[1]] + '_rect'
+					case 0:
+						blockConf.width = 2
+						blockConf.shape = rect[item[1]] + '_rect'
 						break
-						case 1:
-							blockConf.height = 2
-							blockConf.shape = rect[item[1]] + '_rect'
+					case 1:
+						blockConf.height = 2
+						blockConf.shape = rect[item[1]] + '_rect'
 						break
 					}
 				}
@@ -121,18 +120,18 @@ export default class MapCenerator {
 				}
 				conf.deg = index * 90
 				switch (index) {
-					case 0:
-						conf.translate = [0, 0]
-						break
-					case 1:
-						conf.translate = [8.5, -0.5]
-						break
-					case 2:
-						conf.translate = [9, 8]
-						break
-					case 3:
-						conf.translate = [0.5, 8.5]
-						break
+				case 0:
+					conf.translate = [0, 0]
+					break
+				case 1:
+					conf.translate = [8.5, -0.5]
+					break
+				case 2:
+					conf.translate = [9, 8]
+					break
+				case 3:
+					conf.translate = [0.5, 8.5]
+					break
 				}
 				this.createSubWrapper(conf)
 				// animate
