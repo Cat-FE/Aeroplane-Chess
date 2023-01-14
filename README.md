@@ -9,4 +9,4 @@
 * [Reusjs](https://github.com/Reusjs)
 * [xyxiao](https://github.com/xyxiao001)
 * [Yu](https://github.com/Yiiu)
-* [马世祥](https://github.com/yinmazuo)
+* [yinmazuo](https://github.com/yinmazuo)
